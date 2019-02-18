@@ -4,10 +4,12 @@ export default class WeatherComponent {
   constructor() {
     this.controller = new Controller();
     this.locInput = document.getElementById("locInput");
+    this.weatherData = {};
   }
 
-  getWeatherInfo(city) {
-
+  getWeatherInfo() {
+    let cityValue = this.locInput.value;
+    this.weatherData = this.controller.getWeather(cityValue);
   }
 }
 
